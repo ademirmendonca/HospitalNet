@@ -1,0 +1,34 @@
+﻿@model HospitalModels.Exame
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Exame</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeExame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeExame)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdExame }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

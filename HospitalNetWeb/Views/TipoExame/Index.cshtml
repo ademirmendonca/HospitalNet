@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HospitalModels.TipoExame>
+
+@{
+    ViewBag.Title = "Tipo de Exame";
+}
+
+<h2>Tipos de Exame</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label for="nomeTipoExame">Tipo de Exame</label>
+        </th>
+        <th>
+            <label for="descricao">Descrição</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeTipoExame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdTipoExame }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdTipoExame }) |
+            @Html.ActionLink("Remover", "Delete", new { id=item.IdTipoExame })
+        </td>
+    </tr>
+}
+
+</table>
